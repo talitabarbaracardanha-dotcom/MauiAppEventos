@@ -83,7 +83,8 @@
 
                             <Picker x:Name="pck_nomeevento"
                                     Title="Selecione o tipo de Evento"
-                                    FontSize="12"/>
+                                    FontSize="12"
+                                    ItemDisplayBinding="{Binding Descricao}"/>
 
                             <Frame Padding="10"
                                    Margin="10">
@@ -95,7 +96,8 @@
                                     <HorizontalStackLayout>
                                         <Label Text="Data de Início" />
                                         <DatePicker x:Name="dtpck_datainicio"
-                                                    Format="dd/MM/yyyy" />
+                                                    Format="dd/MM/yyyy"
+                                                    DateSelected="dtpck_datainicio_DateSelected"/>
                                     </HorizontalStackLayout>
 
                                     <HorizontalStackLayout>

@@ -27,7 +27,7 @@ namespace MauiAppEventos
             },
             new TipoEventos()
             {
-                Descricao = "Festa de Debustante",
+                Descricao = "Festa de Debutante",
                 ValorAdulto = 130.0,
                 ValorCrianca = 40.0
             },

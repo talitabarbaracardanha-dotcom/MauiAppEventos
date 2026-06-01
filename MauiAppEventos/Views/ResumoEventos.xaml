@@ -82,7 +82,7 @@
                     <HorizontalStackLayout>
                         <Label Text="Total Participantes: "
                                FontAttributes="Bold"
-                               WidthRequest="160"/>
+                               WidthRequest="135"/>
                         <Label Text="{Binding TotalParticipantes}" />
                     </HorizontalStackLayout>
 

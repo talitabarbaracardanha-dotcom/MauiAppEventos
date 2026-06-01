@@ -1,3 +1,5 @@
+using MauiAppEventos.Models;
+
 namespace MauiAppEventos.Views;
 
 public partial class CadastroEventos : ContentPage
@@ -25,21 +27,36 @@ public partial class CadastroEventos : ContentPage
 
         DateTime data_selecionada_datainicio = elemento.Date.Value;
 
-        dtpck_datatermino.MinimumDate = data_selecionada_datainicio.AddDays(1);
+        dtpck_datatermino.MinimumDate = data_selecionada_datainicio;
         dtpck_datatermino.MaximumDate = data_selecionada_datainicio.AddMonths(6);
-         
+        dtpck_datatermino.Date = data_selecionada_datainicio;
+
     }
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
         try
         {
-            Navigation.PushAsync(new ResumoEventos());
+            ContratacaoEvento c = new ContratacaoEvento
+            {
+                EventoSelecionado = (TipoEventos)pck_nomeevento.SelectedItem,
+                QntAdultos = Convert.ToInt32(txt_participantesadultos.Text),
+                QntCriancas = Convert.ToInt32(txt_participantescriancas.Text),
+                nomeevento = txt_nomeevento.Text,
+                localevento = txt_local.Text,
+                datainicio = dtpck_datainicio.Date.Value,
+                datatermino = dtpck_datatermino.Date.Value,
+            };
+
+            await Navigation.PushAsync(new ResumoEventos()
+            {
+                BindingContext = c
+            });
 
 
         }
         catch (Exception ex)
         {
-            DisplayAlert("OPS", ex.Message, "OK");
+            await DisplayAlert("OPS", ex.Message, "OK");
         }
     }
 

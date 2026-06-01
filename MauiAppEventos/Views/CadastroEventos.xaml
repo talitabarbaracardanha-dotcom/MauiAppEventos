@@ -8,8 +8,8 @@
 
     <ScrollView>
         <VerticalStackLayout  VerticalOptions="Fill"
-                              Padding="20"
-                              Spacing="15">
+                              Padding="15"
+                              Spacing="8">
 
             <VerticalStackLayout Spacing="5" Margin="0,10,0,10">
                 <Label Text="Tally Eventos"
@@ -54,7 +54,7 @@
                                FontSize="16"
                                TextColor="{StaticResource Primary}"/>
 
-                        <VerticalStackLayout Spacing="12">
+                        <VerticalStackLayout Spacing="8">
 
                             <Label Text="Nome do Evento:" 
                                    FontAttributes="Bold"
@@ -62,16 +62,25 @@
 
                             <Entry x:Name="txt_nomeevento"
                                    Placeholder="Digite o nome do evento"
-                                   HeightRequest="40"/>
+                                   HeightRequest="35"/>
 
-                            <Label Text="Nº de Participantes:" 
+                            <Label Text="Nº de Participantes (Adultos):" 
                                    FontAttributes="Bold"
                                    FontSize="12"/>
 
-                            <Entry x:Name="txt_participantes"
+                            <Entry x:Name="txt_participantesadultos"
                                    Placeholder="Ex. 100"
                                    Keyboard="Numeric"
-                                   HeightRequest="40"/>
+                                   HeightRequest="35"/>
+                            
+                            <Label Text="Nº de Participantes (Crianças até 10 anos):" 
+                                   FontAttributes="Bold"
+                                   FontSize="12"/>
+
+                            <Entry x:Name="txt_participantescriancas"
+                                     Placeholder="Ex. 100"
+                                     Keyboard="Numeric"
+                                     HeightRequest="35"/> 
 
                             <Label Text="Local do Evento:" 
                                    FontAttributes="Bold"
@@ -79,15 +88,15 @@
 
                             <Entry x:Name="txt_local"
                                    Placeholder="Digite o Local"
-                                   HeightRequest="40"/>
+                                   HeightRequest="35"/>
 
                             <Picker x:Name="pck_nomeevento"
                                     Title="Selecione o tipo de Evento"
-                                    FontSize="12"
+                                    FontSize="14"
                                     ItemDisplayBinding="{Binding Descricao}"/>
 
-                            <Frame Padding="10"
-                                   Margin="10">
+                            <Frame Padding="8"
+                                   Margin="5">
                                 <VerticalStackLayout>
                                     <Label Text="Data do Evento" 
                                            HorizontalOptions="Center"
@@ -110,7 +119,11 @@
                                 </VerticalStackLayout>
                             </Frame>
 
-                            <Button Text="Avançar" Clicked="Button_Clicked" />
+                            <Button Text="Avançar" 
+                                    HeightRequest="50"
+                                    CornerRadius="20"
+                                    FontAttributes="Bold"
+                                    Clicked="Button_Clicked" />
 
                         </VerticalStackLayout>
 
